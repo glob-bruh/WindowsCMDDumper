@@ -1,3 +1,6 @@
+::
+::    WINDOWS CMD DUMPER
+::
 ::    This program is free software: you can redistribute it and/or modify
 ::    it under the terms of the GNU General Public License as published by
 ::    the Free Software Foundation, either version 3 of the License, or
@@ -10,6 +13,7 @@
 ::
 ::    You should have received a copy of the GNU General Public License
 ::    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+::
 
 @echo off
 
@@ -20,6 +24,8 @@ echo *                                                                *
 echo * This program comes with ABSOLUTELY NO WARRANTY.                *
 echo * This is free software, and you are welcome to redistribute it  *
 echo * under certain conditions.                                      *
+echo *                                                                *
+echo * Instructions available in the README.md file.                  *
 echo *                                                                *
 echo * https://github.com/glob-bruh/WindowsCMDDumper                  *
 echo ******************************************************************
@@ -38,15 +44,15 @@ dir /s /a \ > .\GlobBruhDUMP\FileListNORMAL.txt
 echo Filelist Detailed...
 dir /4 /s /q /a \ > .\GlobBruhDUMP\FilelistDETAILED.txt
 
-echo Regestry Dump - HKLM...
+echo Registry Dump - HKLM...
 reg export HKLM .\GlobBruhDUMP\RegHKLM.reg
-echo Regestry Dump - HKCU...
+echo Registry Dump - HKCU...
 reg export HKCU .\GlobBruhDUMP\RegHKCU.reg
-echo Regestry Dump - HKCR...
+echo Registry Dump - HKCR...
 reg export HKCR .\GlobBruhDUMP\RegHKCR.reg
-echo Regestry Dump - HKU...
+echo Registry Dump - HKU...
 reg export HKU .\GlobBruhDUMP\RegHKU.reg
-echo Regestry Dump - HKCC...
+echo Registry Dump - HKCC...
 reg export HKCC .\GlobBruhDUMP\RegHKCC.reg
 
 echo Tasklist Normal...
@@ -71,7 +77,11 @@ copy C:\ProgramData\Malwarebytes\MBAMService\ScanResults\ .\GlobBruhDUMP\Malware
 
 echo Compress Folder...
 powershell Compress-Archive ./GlobBruhDUMP/ ./GLOBBRUH-DUMP.zip
-powershell rm -r ./GlobBruhDUMP
+rmdir /s /q .\GlobBruhDUMP
 
 echo Done!
+echo **********************************************
+echo * You can find the zip file on the Desktop!  *
+echo **********************************************
+pause
 @echo on

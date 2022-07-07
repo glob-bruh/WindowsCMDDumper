@@ -11,4 +11,8 @@ The purpose of this script is to take system and user information (such as a lis
 3) Click "yes" on the User Account Control window. 
 4) Wait until the Command Prompt window closes.
 
-The zip file can be found either on the desktop directly or by navigating to the desktop folder in a program like File Explorer. 
+The zip file can be found either on the desktop directly or by navigating to the desktop folder in a program like File Explorer.
+
+## License:
+
+Licensed under [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
